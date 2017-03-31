@@ -1,0 +1,48 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from DetalleSolicitudViaticoWSService WSDL service -->
+
+  <service name="DetalleSolicitudViaticoWS" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://ws.utng.edu.mx"/>
+      <parameter name="wsdlServiceElement" value="DetalleSolicitudViaticoWSService"/>
+      <parameter name="schemaQualified" value="http://ws.utng.edu.mx"/>
+      <parameter name="wsdlServicePort" value="DetalleSolicitudViaticoWS"/>
+      <parameter name="className" value="mx.edu.utng.ws.DetalleSolicitudViaticoWSSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="DetalleSolicitudViaticoWS"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="obtenerDetalleSolicitudViatico" qname="operNS:obtenerDetalleSolicitudViatico" xmlns:operNS="http://ws.utng.edu.mx" returnQName="retNS:obtenerDetalleSolicitudViaticoReturn" xmlns:retNS="http://ws.utng.edu.mx" returnType="rtns:DetalleSolicitudViatico" xmlns:rtns="http://ws.utng.edu.mx" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://ws.utng.edu.mx" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <operation name="getDetalle" qname="operNS:getDetalle" xmlns:operNS="http://ws.utng.edu.mx" returnQName="retNS:getDetalleReturn" xmlns:retNS="http://ws.utng.edu.mx" returnType="rtns:DetalleSolicitudViatico" xmlns:rtns="http://ws.utng.edu.mx" soapAction="" >
+      </operation>
+      <operation name="agregarDetalleSolicitudViatico" qname="operNS:agregarDetalleSolicitudViatico" xmlns:operNS="http://ws.utng.edu.mx" returnQName="retNS:agregarDetalleSolicitudViaticoReturn" xmlns:retNS="http://ws.utng.edu.mx" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:detalleSolicitudViatico" xmlns:pns="http://ws.utng.edu.mx" type="tns:DetalleSolicitudViatico" xmlns:tns="http://ws.utng.edu.mx"/>
+      </operation>
+      <operation name="editarDetalleSolicitudViatico" qname="operNS:editarDetalleSolicitudViatico" xmlns:operNS="http://ws.utng.edu.mx" returnQName="retNS:editarDetalleSolicitudViaticoReturn" xmlns:retNS="http://ws.utng.edu.mx" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:detalleSolicitudViatico" xmlns:pns="http://ws.utng.edu.mx" type="tns:DetalleSolicitudViatico" xmlns:tns="http://ws.utng.edu.mx"/>
+      </operation>
+      <operation name="eliminarDetalleSolicitudViatico" qname="operNS:eliminarDetalleSolicitudViatico" xmlns:operNS="http://ws.utng.edu.mx" returnQName="retNS:eliminarDetalleSolicitudViaticoReturn" xmlns:retNS="http://ws.utng.edu.mx" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:id" xmlns:pns="http://ws.utng.edu.mx" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="agregarDetalleSolicitudViatico obtenerDetalleSolicitudViatico getDetalle eliminarDetalleSolicitudViatico editarDetalleSolicitudViatico"/>
+
+      <typeMapping
+        xmlns:ns="http://ws.utng.edu.mx"
+        qname="ns:DetalleSolicitudViatico"
+        type="java:mx.edu.utng.ws.DetalleSolicitudViatico"
+        serializer="org.apache.axis.encoding.ser.BeanSerializerFactory"
+        deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory"
+        encodingStyle=""
+      />
+  </service>
+</deployment>

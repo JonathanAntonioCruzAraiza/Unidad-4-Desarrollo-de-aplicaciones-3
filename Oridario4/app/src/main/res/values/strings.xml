@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Oridario4</string>
+    <string name="regress">regress</string>
+    <string name="item">item</string>
+    <string name="action_settings">action settings</string>
+    <string name="modificar">modificar</string>
+    <string name="eliminar">eliminar</string>
+    <string name="monto_solicitado">Monto solicitado</string>
+    <string name="monto_otorgado">Monto Otorgado</string>
+    <string name="monton_comprobado">Monton comprobado</string>
+    <string name="comprobacion_valida">comprobacion valida</string>
+    <string name="solicitud_valida">Solicitud valida</string>
+    <string name="partida">partida</string>
+    <string name="guardar">Guardar</string>
+    <string name="listar">listar</string>
+</resources>

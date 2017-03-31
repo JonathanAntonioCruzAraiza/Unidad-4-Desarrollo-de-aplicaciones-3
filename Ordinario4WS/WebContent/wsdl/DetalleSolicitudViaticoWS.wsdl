@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ws.utng.edu.mx" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ws.utng.edu.mx" xmlns:intf="http://ws.utng.edu.mx" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ws.utng.edu.mx" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="obtenerDetalleSolicitudViatico">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="obtenerDetalleSolicitudViaticoResponse">
+    <complexType>
+     <sequence>
+      <element name="obtenerDetalleSolicitudViaticoReturn" type="impl:DetalleSolicitudViatico"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="DetalleSolicitudViatico">
+    <sequence>
+     <element name="comprobacionValida" nillable="true" type="xsd:string"/>
+     <element name="id" type="xsd:int"/>
+     <element name="montoComprobado" nillable="true" type="xsd:string"/>
+     <element name="montoOtorgado" nillable="true" type="xsd:string"/>
+     <element name="montoSolicitado" nillable="true" type="xsd:string"/>
+     <element name="partida" nillable="true" type="xsd:string"/>
+     <element name="solicitudViatico" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="getDetalle">
+    <complexType/>
+   </element>
+   <element name="getDetalleResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getDetalleReturn" type="impl:DetalleSolicitudViatico"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="agregarDetalleSolicitudViatico">
+    <complexType>
+     <sequence>
+      <element name="detalleSolicitudViatico" type="impl:DetalleSolicitudViatico"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="agregarDetalleSolicitudViaticoResponse">
+    <complexType>
+     <sequence>
+      <element name="agregarDetalleSolicitudViaticoReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="editarDetalleSolicitudViatico">
+    <complexType>
+     <sequence>
+      <element name="detalleSolicitudViatico" type="impl:DetalleSolicitudViatico"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="editarDetalleSolicitudViaticoResponse">
+    <complexType>
+     <sequence>
+      <element name="editarDetalleSolicitudViaticoReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="eliminarDetalleSolicitudViatico">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="eliminarDetalleSolicitudViaticoResponse">
+    <complexType>
+     <sequence>
+      <element name="eliminarDetalleSolicitudViaticoReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="agregarDetalleSolicitudViaticoRequest">
+
+      <wsdl:part element="impl:agregarDetalleSolicitudViatico" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="editarDetalleSolicitudViaticoResponse">
+
+      <wsdl:part element="impl:editarDetalleSolicitudViaticoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="obtenerDetalleSolicitudViaticoRequest">
+
+      <wsdl:part element="impl:obtenerDetalleSolicitudViatico" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDetalleRequest">
+
+      <wsdl:part element="impl:getDetalle" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="editarDetalleSolicitudViaticoRequest">
+
+      <wsdl:part element="impl:editarDetalleSolicitudViatico" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getDetalleResponse">
+
+      <wsdl:part element="impl:getDetalleResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="eliminarDetalleSolicitudViaticoRequest">
+
+      <wsdl:part element="impl:eliminarDetalleSolicitudViatico" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="agregarDetalleSolicitudViaticoResponse">
+
+      <wsdl:part element="impl:agregarDetalleSolicitudViaticoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="obtenerDetalleSolicitudViaticoResponse">
+
+      <wsdl:part element="impl:obtenerDetalleSolicitudViaticoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="eliminarDetalleSolicitudViaticoResponse">
+
+      <wsdl:part element="impl:eliminarDetalleSolicitudViaticoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="DetalleSolicitudViaticoWS">
+
+      <wsdl:operation name="obtenerDetalleSolicitudViatico">
+
+         <wsdl:input message="impl:obtenerDetalleSolicitudViaticoRequest" name="obtenerDetalleSolicitudViaticoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:obtenerDetalleSolicitudViaticoResponse" name="obtenerDetalleSolicitudViaticoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDetalle">
+
+         <wsdl:input message="impl:getDetalleRequest" name="getDetalleRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getDetalleResponse" name="getDetalleResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="agregarDetalleSolicitudViatico">
+
+         <wsdl:input message="impl:agregarDetalleSolicitudViaticoRequest" name="agregarDetalleSolicitudViaticoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:agregarDetalleSolicitudViaticoResponse" name="agregarDetalleSolicitudViaticoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="editarDetalleSolicitudViatico">
+
+         <wsdl:input message="impl:editarDetalleSolicitudViaticoRequest" name="editarDetalleSolicitudViaticoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:editarDetalleSolicitudViaticoResponse" name="editarDetalleSolicitudViaticoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="eliminarDetalleSolicitudViatico">
+
+         <wsdl:input message="impl:eliminarDetalleSolicitudViaticoRequest" name="eliminarDetalleSolicitudViaticoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:eliminarDetalleSolicitudViaticoResponse" name="eliminarDetalleSolicitudViaticoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="DetalleSolicitudViaticoWSSoapBinding" type="impl:DetalleSolicitudViaticoWS">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="obtenerDetalleSolicitudViatico">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="obtenerDetalleSolicitudViaticoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="obtenerDetalleSolicitudViaticoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getDetalle">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getDetalleRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getDetalleResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="agregarDetalleSolicitudViatico">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="agregarDetalleSolicitudViaticoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="agregarDetalleSolicitudViaticoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="editarDetalleSolicitudViatico">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="editarDetalleSolicitudViaticoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="editarDetalleSolicitudViaticoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="eliminarDetalleSolicitudViatico">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="eliminarDetalleSolicitudViaticoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="eliminarDetalleSolicitudViaticoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="DetalleSolicitudViaticoWSService">
+
+      <wsdl:port binding="impl:DetalleSolicitudViaticoWSSoapBinding" name="DetalleSolicitudViaticoWS">
+
+         <wsdlsoap:address location="http://localhost:8080/Ordinario/services/DetalleSolicitudViaticoWS"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
